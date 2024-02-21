@@ -705,27 +705,90 @@ textarea {
 
 .member__top {
     text-align: center;
-    margin-bottom: 26px;
+    margin-bottom: 45px;
 }
 
 .member-list {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    column-gap: 35px;
 }
 
-.member-list__item {
+.member-item {
     text-align: center;
 }
 
-.member-list__item-wrap {
-    width: 251px;
-    display: flex;
-    justify-content: center;
+.member-item__img-wrap {
+    position: relative;
+    margin: 0 16px;
+    border-radius: 130px;
 }
 
-.member-img {
+.member-item__img-wrap::before {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    left: 0;
     width: 100%;
-    object-fit: cover;
+    height: 266px;
+    background: linear-gradient(180deg, #90CCFF 0%, #59A8EB 95.96%);
+    border-radius: inherit;
+}
+
+.member-item__img-wrap::after {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+}
+
+.member-item:nth-child(1) .member-item__img-wrap::after {
+    content: url(../img/staff-decor-01.svg);
+}
+
+.member-item:nth-child(2) .member-item__img-wrap::after {
+    content: url(../img/staff-decor-02.svg);
+}
+
+.member-item:nth-child(2) .member-item__img-wrap::before {
+    background: linear-gradient(180deg, #FF997E 0%, #F3752E 100%);
+}
+
+.member-item:nth-child(3) .member-item__img-wrap::after {
+    content: url(../img/staff-decor-03.svg);
+}
+
+.member-item:nth-child(3) .member-item__img-wrap::before {
+    background: linear-gradient(180deg, #FABF3E 0%, #FFA14A 100%);
+}
+
+.member-item:nth-child(4) .member-item__img-wrap::after {
+    content: url(../img/staff-decor-04.svg);
+}
+
+.member-item:nth-child(4) .member-item__img-wrap::before {
+    background: linear-gradient(180deg, #5BD6E2 0%, #00A7CC 100%);
+}
+
+.member-item:nth-child(even) .member-item__img-wrap::after {
+    bottom: initial;
+    top: 18px;
+}
+
+.member-item__img {
+    display: block;
+    position: relative;
+    z-index: 1;
+    border-radius: inherit;
+    width: 100%;
+}
+
+.member-item__job {
+    margin-top: 34px;
+}
+
+.member-item__name {
+    margin-top: 10px;
 }
 
 /* ======================== Member ======================== */
